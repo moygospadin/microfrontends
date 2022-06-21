@@ -1,6 +1,5 @@
-import { mount as productMount } from "products/ProductsIndex";
-import { mount as cartMount } from "cart/CartShow";
-console.log("container");
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App";
 
-productMount(document.querySelector("#dev-products"));
-cartMount(document.querySelector("#cart-dev"));
+ReactDOM.render(<App />, document.querySelector("#root"));
