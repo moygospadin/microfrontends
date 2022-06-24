@@ -13,7 +13,9 @@ const mount = (el, { onNavigate, defaultHistory }) => {
   ReactDOM.render(<App history={history} />, el);
 
 
+
   return {
+
     onParentNavigate({ pathname: nextPathname }) {
       const { pathname } = history.location;
 
@@ -27,7 +29,9 @@ const mount = (el, { onNavigate, defaultHistory }) => {
 if (process.env.NODE_ENV === "development") {
   const devRoot = document.querySelector("#_marketing-dev-root");
   if (devRoot) {
+
     mount(devRoot, { defaultHistory: createBrowserHistory() });
+    
   }
 }
 
