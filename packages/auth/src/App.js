@@ -13,13 +13,18 @@ const generateClassName = createGenerateClassName({
   seed: "au",
 });
 
-export default ({ history }) => {
+export default ({ history, AuthService }) => {
+  const setAuth = AuthService?.setAuth || function () {};
   return (
     <StylesProvider generateClassName={generateClassName}>
       <Router history={history}>
         <Switch>
-          <Route path={"/auth/signin"} component={SignIn} />
-          <Route path={"/auth/signup"} component={SignUp} />
+          <Route path={"/auth/signin"}>
+            <SignIn onAuthChange={() => setAuth(true)} />
+          </Route>
+          <Route path={"/auth/signup"}>
+            <SignUp onAuthChange={() => setAuth(true)} />
+          </Route>
         </Switch>
       </Router>
     </StylesProvider>

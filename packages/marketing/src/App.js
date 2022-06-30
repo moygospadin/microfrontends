@@ -14,7 +14,8 @@ const generateClassName = createGenerateClassName({
   seed: "ma",
 });
 
-export default ({ history }) => {
+export default ({ history, AuthService }) => {
+  AuthService.subscribe((val) => console.log(val));
   return (
     <StylesProvider generateClassName={generateClassName}>
       <Router history={history}>
