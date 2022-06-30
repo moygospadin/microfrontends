@@ -1,5 +1,8 @@
 import React from "react";
-import { StylesProvider, createGenerateClassName } from "@material-ui/core";
+import {
+  StylesProvider,
+  createGenerateClassName,
+} from "@material-ui/core/styles";
 
 import { Switch, Route, BrowserRouter, Router } from "react-router-dom";
 import SignIn from "./components/Signin";
@@ -7,6 +10,7 @@ import SignUp from "./components/Signup";
 const generateClassName = createGenerateClassName({
   productionPrefix: "au",
   disableGlobal: true,
+  seed: "au",
 });
 
 export default ({ history }) => {

@@ -1,12 +1,16 @@
 import React, { lazy, Suspense } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import { StylesProvider, createGenerateClassName } from "@material-ui/core";
+import {
+  StylesProvider,
+  createGenerateClassName,
+} from "@material-ui/core/styles";
 import Progress from "./components/Progress";
 import Header from "./components/Header";
 
 const generateClassName = createGenerateClassName({
   productionPrefix: "co",
   disableGlobal: true,
+  seed: "co",
 });
 
 const MarketingLazy = lazy(() => import("./components/MarketingApp"));
@@ -16,7 +20,6 @@ export default () => {
     <BrowserRouter>
       <StylesProvider generateClassName={generateClassName}>
         <>
-
           <Header />
           <Suspense fallback={<Progress />}>
             <Switch>
