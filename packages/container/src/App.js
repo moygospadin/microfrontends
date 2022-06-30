@@ -6,6 +6,7 @@ import Header from "./components/Header";
 
 const generateClassName = createGenerateClassName({
   productionPrefix: "co",
+  disableGlobal: true,
 });
 
 const MarketingLazy = lazy(() => import("./components/MarketingApp"));
@@ -15,7 +16,7 @@ export default () => {
     <BrowserRouter>
       <StylesProvider generateClassName={generateClassName}>
         <>
-        
+
           <Header />
           <Suspense fallback={<Progress />}>
             <Switch>

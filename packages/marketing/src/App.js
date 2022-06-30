@@ -7,6 +7,7 @@ import Pricing from "./components/Pricing";
 
 const generateClassName = createGenerateClassName({
   productionPrefix: "ma",
+  disableGlobal: true,
 });
 
 export default ({ history }) => {
